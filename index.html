@@ -232,6 +232,39 @@ footer{padding:28px var(--pad) 44px;color:var(--label);font-size:12.5px;display:
 .q-note{margin-top:18px;color:var(--muted);font-size:14px;max-width:56ch}
 @media (max-width:900px){.quote-grid{grid-template-columns:1fr;gap:24px}.q-photo{width:150px;height:150px}}
 
+/* дашборд */
+.dash-grid{display:grid;grid-template-columns:1fr 380px;gap:56px;align-items:center}
+.phone{justify-self:center;width:340px;border-radius:34px;padding:10px;background:linear-gradient(180deg,#2a1b12,#120c08);border:1px solid rgba(251,219,175,.22);box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.phone-body{background:#0C0907;border-radius:26px;padding:18px 16px;display:grid;gap:12px}
+.ph-top{display:flex;justify-content:space-between;align-items:center;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--label)}
+.ph-top span:first-child{color:var(--cream);letter-spacing:.18em}
+.ph-kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ph-kpi>div{border:1px solid var(--line);border-radius:12px;padding:10px 9px;display:grid;gap:3px}
+.ph-kpi .l{font-size:8.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--label);line-height:1.3}
+.ph-kpi .v{font-family:'Unbounded','Orbitron-Medium',sans-serif;font-size:13.5px;color:var(--cream);line-height:1.1}
+.ph-kpi .d{font-size:9px;color:var(--label)}
+.ph-kpi .d.up{color:#8FBF7A}
+.ph-kpi .d.down{color:#E0995A}
+.ph-sec{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--label);margin-top:4px}
+.ph-alert{display:grid;grid-template-columns:auto 1fr;gap:9px;align-items:start;border:1px solid rgba(224,112,32,.4);background:rgba(224,112,32,.1);border-radius:12px;padding:9px 11px}
+.ph-alert.warn{border-color:rgba(251,219,175,.2);background:rgba(251,219,175,.05)}
+.ph-alert .dot{width:6px;height:6px;border-radius:50%;background:#E07020;margin-top:5px}
+.ph-alert.warn .dot{background:rgba(251,219,175,.55)}
+.ph-alert b{display:block;font-size:11px;font-weight:500;color:var(--cream);line-height:1.3}
+.ph-alert span:last-child{display:block;font-size:10px;color:var(--muted);margin-top:2px;line-height:1.35}
+.ph-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--line);font-size:11.5px}
+.ph-row:last-of-type{border-bottom:0}
+.ph-row .n{color:var(--cream)}
+.ph-row .s{font-size:10.5px;color:var(--muted)}
+.ph-row .s.ok{color:#8FBF7A}
+.ph-row .s.bad{color:#E0995A}
+.ph-bars{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;align-items:end;height:64px}
+.ph-bars>div{display:grid;justify-items:center;gap:5px;height:100%;align-content:end}
+.ph-bars i{display:block;width:100%;border-radius:4px 4px 2px 2px;background:linear-gradient(180deg,rgba(251,219,175,.85),rgba(224,112,32,.5))}
+.ph-bars span{font-size:8.5px;color:var(--label)}
+.ph-foot{font-size:9.5px;color:var(--label);text-align:center;padding-top:4px;border-top:1px solid var(--line)}
+@media (max-width:900px){.dash-grid{grid-template-columns:1fr;gap:32px}.phone{width:300px}}
+
 /* product band */
 .band{background:#E9E9ED;color:#141210;padding:0}
 .band-grid{display:grid;grid-template-columns:1fr .8fr;gap:48px;align-items:center;padding-top:72px;padding-bottom:72px}
@@ -368,7 +401,7 @@ footer{padding:28px var(--pad) 44px;color:var(--label);font-size:12.5px;display:
       <h3 class="words-pull-up">Параметры внедрения</h3>
       <div class="spec-row fade-up-reveal" data-delay="1.2"><span class="spec-label">Команда</span><span class="spec-value">5 человек + руководитель</span></div>
       <div class="spec-row fade-up-reveal" data-delay="1.3"><span class="spec-label">Срок</span><span class="spec-value">2 недели + 30 дней поддержки</span></div>
-      <div class="spec-row fade-up-reveal" data-delay="1.4"><span class="spec-label">Боты</span><span class="spec-value">Задачи · Отзывы WB / Ozon</span></div>
+      <div class="spec-row fade-up-reveal" data-delay="1.4"><span class="spec-label">Что остаётся</span><span class="spec-value">Боты · База · Дашборд</span></div>
       <div class="spec-row fade-up-reveal" data-delay="1.5"><span class="spec-label">Стоимость</span><span class="spec-value">200 000 ₽ за команду</span></div>
     </div>
   </div>
@@ -470,6 +503,61 @@ footer{padding:28px var(--pad) 44px;color:var(--label);font-size:12.5px;display:
         <div class="f fade-up-reveal" data-delay="0.18"><div class="n">4</div><p><b>Закрытие одной кнопкой.</b> «Сделано» — и результат уходит в базу компании, а не в личный чат сотрудника.</p></div>
         <div class="f fade-up-reveal" data-delay="0.24"><div class="n">5</div><p><b>Напоминает сам.</b> Задача горит — бот пишет исполнителю, а на второй день просрочки поднимает её вам в сводку.</p></div>
         <div class="f fade-up-reveal" data-delay="0.3"><div class="n">6</div><p><b>Отчёт вам два раза в день</b> плюс итог недели: кто сколько закрыл, у кого перегруз, что зависло.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== ДАШБОРД ==================== -->
+<section class="blk rust" id="dash">
+  <div class="wrap dash-grid">
+    <div>
+      <div class="eyebrow fade-up-reveal" data-delay="0">Только для руководителя</div>
+      <h2 class="sec words-pull-up">Весь бизнес — одной ссылкой с телефона</h2>
+      <p class="sub fade-up-reveal" data-delay="0.1">Закрытая страница, открывается по ссылке только у вас. Не надо заходить в кабинеты, спрашивать менеджеров и собирать цифры руками — всё уже посчитано и обновляется само.</p>
+      <ul class="list fade-up-reveal" data-delay="0.16" style="margin-top:26px">
+        <li><b>Команда в реальном времени</b> — кто что закрыл сегодня, что горит, у кого перегруз.</li>
+        <li><b>Цифры Ozon и WB рядом</b> — выручка, заказы, DRR, остатки и что заканчивается на складе.</li>
+        <li><b>Алерты сами лезут наверх</b> — реклама съедает маржу, прилетел негативный отзыв, товар вот-вот кончится.</li>
+        <li><b>В пятницу итог недели</b> приходит в телеграм, открывать ничего не надо.</li>
+      </ul>
+      <p class="note fade-up-reveal" data-delay="0.22">Пример ниже собран на ваших показателях — так экран будет выглядеть у вас.</p>
+    </div>
+
+    <div class="phone fade-up-reveal" data-delay="0.08">
+      <div class="phone-body">
+        <div class="ph-top"><span>ЭФИРИУМ</span><span>чт, 11 сентября</span></div>
+
+        <div class="ph-kpi">
+          <div><span class="l">Выручка · 7 дней</span><span class="v">1 284 600 ₽</span><span class="d up">+12 % к прошлой</span></div>
+          <div><span class="l">Заказов</span><span class="v">612</span><span class="d up">+8 %</span></div>
+          <div><span class="l">Средний DRR</span><span class="v">18 %</span><span class="d down">было 14 %</span></div>
+        </div>
+
+        <div class="ph-sec">Требует вас</div>
+        <div class="ph-alert"><span class="dot"></span><div><b>DRR 92 % — «White Chocolate»</b><span>третий день, реклама съедает маржу</span></div></div>
+        <div class="ph-alert"><span class="dot"></span><div><b>Негативный отзыв, 2 звезды</b><span>Séisme, 15 минут назад · ответ готов</span></div></div>
+        <div class="ph-alert warn"><span class="dot"></span><div><b>Остаток 11 шт — Aventus</b><span>хватит на 4 дня по текущим продажам</span></div></div>
+
+        <div class="ph-sec">Команда сегодня</div>
+        <div class="ph-row"><span class="n">Диана</span><span class="s ok">3 из 3</span></div>
+        <div class="ph-row"><span class="n">Лиля</span><span class="s ok">6 карточек</span></div>
+        <div class="ph-row"><span class="n">Менеджер 1</span><span class="s ok">закрыто 4</span></div>
+        <div class="ph-row"><span class="n">Менеджер 2</span><span class="s ok">14 отзывов</span></div>
+        <div class="ph-row"><span class="n">Менеджер 3</span><span class="s bad">1 просрочена</span></div>
+
+        <div class="ph-sec">Неделя</div>
+        <div class="ph-bars">
+          <div><i style="height:38%"></i><span>пн</span></div>
+          <div><i style="height:56%"></i><span>вт</span></div>
+          <div><i style="height:47%"></i><span>ср</span></div>
+          <div><i style="height:72%"></i><span>чт</span></div>
+          <div><i style="height:64%"></i><span>пт</span></div>
+          <div><i style="height:88%"></i><span>сб</span></div>
+          <div><i style="height:80%"></i><span>вс</span></div>
+        </div>
+        <div class="ph-foot">Итог недели придёт в телеграм в пятницу в 18:00</div>
       </div>
     </div>
   </div>
@@ -713,6 +801,7 @@ footer{padding:28px var(--pad) 44px;color:var(--label);font-size:12.5px;display:
       <div class="item"><div><div class="t">Бот ответов на отзывы и вопросы WB / Ozon</div><div class="d">Готовит ответ в вашем тоне, менеджер отправляет одной кнопкой или правит — бот учится на правках, негатив поднимает руководителю.</div></div></div>
       <div class="item"><div><div class="t">Ozon API, WB API и Metriclub — Диане и трём менеджерам</div><div class="d">То, что сделали у вас 2 сентября, повторяем на каждом рабочем месте. Без премиум-подписки Ozon за 25 000 ₽/мес.</div></div></div>
       <div class="item"><div><div class="t">База компании: структура, права, шаблоны, справочники</div><div class="d">Google-аккаунт, база «Эфириум», папки по людям, перекрёстные папки, доступы, регламент и правила безопасности.</div></div></div>
+      <div class="item"><div><div class="t">Дашборд руководителя</div><div class="d">Закрытая страница по ссылке: команда сегодня, выручка, заказы, DRR, остатки, алерты по рекламе и негативным отзывам, итог недели в телеграм по пятницам. Открывается с телефона, обновляется сама.</div></div></div>
       <div class="item"><div><div class="t">Видеозаписи всех занятий</div><div class="d">Все живые встречи — групповые и личные — записываются и отдаются вам файлами. Библиотека остаётся у компании навсегда: пересмотреть, освежить, обучить нового человека.</div></div></div>
       <div class="item"><div><div class="t">Библиотека скиллов</div><div class="d">Задачник, отчёт, письмо, карточка — ставятся в любой Claude и сразу работают. Новый сотрудник получает их за минуту.</div></div></div>
       <div class="item"><div><div class="t">30 дней поддержки после запуска</div><div class="d">Общий чат, отвечаю сам, обычно в тот же день.</div></div></div>
